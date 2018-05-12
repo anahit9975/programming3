@@ -13,11 +13,11 @@ app.get("/search", function (req, res) {
     res.redirect("https://www.google.com/");
 });
 
-
-app.get("/search/:anything", function (req, res) {
-    var k = req.params.anthing;
-    res.redirect('https://www.google.com/search?q=' + k);
+app.get("/search", function (req, res) {
+    var k = req.params.anything;
+    res.redirect("https://www.google.com/?q=anything");
 });
+
 
 app.get("/name/:name", function (req, res) {
     var n = req.params.name;
