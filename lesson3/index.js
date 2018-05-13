@@ -13,12 +13,6 @@ app.get("/search", function (req, res) {
     res.redirect("https://www.google.com/");
 });
 
-app.get("/search", function (req, res) {
-    var k = req.params.anything;
-    res.redirect("https://www.google.com/?q=anything");
-});
-
-
 app.get("/name/:name", function (req, res) {
     var n = req.params.name;
     res.send("<h1> Hello " + n + "</h1>");
