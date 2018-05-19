@@ -3,7 +3,7 @@ function main() {
     var chatDiv = document.getElementById('chat');
     var input = document.getElementById('message');
     var button = document.getElementById('submit');
-    var buttonDel = document.getElementById('Delete');
+    var del = document.getElementById('delete');
     function handleSubmit(evt) {
         var val = input.value;
         if (val != "") {
@@ -21,9 +21,14 @@ function main() {
     socket.on('display message', handleMessage);
 } // main closing bracket
 
-function delmess(){
+function delmess(evt) {
     socket.emit("delete messege");
+    messages = [];
+    var child = document.getElementById("message");
+    chatDiv.removeChild("child");
+   
 }
-    buttonDel.onclick = elmess;
+del.onclick = delmess;
+
 window.onload = main;
 
