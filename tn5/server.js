@@ -12,11 +12,13 @@ server.listen(3000);
 
 io.on('connection', function (socket) {
     for (var i in coord) {
-        io.socket.emit('stacir nkary', coord[i]);
+        io.sockets.emit('stacir nkary', coord[i]);
     }
 
-    socket.on("send pic", function (data) {
+    socket.on('stacir kordinatnery', function (data) {
         coord.push(data);
-        io.socket.emit('stacir nkary', data);
-    })
+        io.sockets.emit('stacir kordinatnery nkarelu hamar', data);
+        
+    });
+
 });

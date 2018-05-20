@@ -21,11 +21,10 @@ function main() {
     socket.on('display message', handleMessage);
 } // main closing bracket
 
-function delmess(evt) {
+function delmess() {
     socket.emit("delete messege");
     messages = [];
-    var child = document.getElementById("message");
-    chatDiv.removeChild("child");
+    chatDiv.removeChild(input);
    
 }
 del.onclick = delmess;

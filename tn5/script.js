@@ -1,27 +1,27 @@
+function main() {
+    socket = io.connect('http://localhost:3000');
+    socket.on('stacir kordinatnery nkarelu hamar', drawingroom);
+
+    function drawingroom(kordinatner) {
+        fill(kordinatner[2], kordinatner[3], kordinatner[4]);
+        ellipse(kordinatner[0], kordinatner[1], 10, 10);
+    }
+
+}
+
 function setup() {
     createCanvas(500, 500);
     background('#acacac');
-
-}
-function draw() {
-    fill('blue');
-
-    function nkarir () {
-        var x = mouseX ;
-        var y = mouseY ;
-    }
-    if (key == "Enter") {
-        socket.on('stacir nkary', nkarir);
-    }
-
+    var r = random(255);
+    var g = random(255);
+    var b = random(255);
 }
 
 function mouseDragged() {
-    ellipse(mouseX, mouseY, 10, 10);
-    return false;
+
+    socket.emit('stacir kordinatnery', [mouseX, mouseY, r, g, b]);
+
 
 }
 
-
- var socket = io.connect('https://lockalhost:3000');
-   
+window.onload = main;
