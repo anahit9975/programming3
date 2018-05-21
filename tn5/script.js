@@ -12,9 +12,9 @@ function main() {
 function setup() {
     createCanvas(500, 500);
     background('#acacac');
-    var r = random(255);
-    var g = random(255);
-    var b = random(255);
+     r = random(255);
+     g = random(255);
+     b = random(255);
 }
 
 function mouseDragged() {

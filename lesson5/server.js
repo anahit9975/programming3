@@ -20,7 +20,10 @@ io.on('connection', function (socket) {
    })
 
    socket.on("delete messege", function (data) {
-    io.sockets.emit("delete messege");
+     for (var j in messages){
+      io.sockets.emit("delete messege");
+     }
+   
    })
    
 });

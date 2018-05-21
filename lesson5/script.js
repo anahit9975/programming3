@@ -12,22 +12,26 @@ function main() {
     }
     button.onclick = handleSubmit;
     function handleMessage(msg) {
-        var p = document.createElement('p');
+        p = document.createElement('p');
         p.innerText = msg;
         chatDiv.appendChild(p);
         input.value = "";
     }
 
     socket.on('display message', handleMessage);
+
+    function delmess() {
+            chatDiv.removeChild(p);
+            messages = [];
+    }
+    socket.on("delete messege", delmess);
+
+    del.onclick = delmess;
 } // main closing bracket
 
-function delmess() {
-    socket.emit("delete messege");
-    messages = [];
-    chatDiv.removeChild(input);
-   
-}
-del.onclick = delmess;
+
+
+
 
 window.onload = main;
 
